@@ -8,18 +8,11 @@ git-init:
 	git init
 	git config user.name "$(USER)"
 	git config user.email "$(EMAIL)"
-	git add go.mod
+	git add go.mod Makefile
 	git commit -m "Init commit"
-	git remote remove origin
-	#git remote set-url origin git@github.com:$(USER)/$(PROJECT).git
 	git remote add origin git@github.com:$(USER)/$(PROJECT).git
 	git remote -v
-	git push -u origin main
-
-
-.PHONY: git-add-origin
-git-add-origin:
-	git remote add origin git@github.com:$(USER)/$(PROJECT).git
+	git push -u origin master
 
 
 BN ?= dev
@@ -80,3 +73,13 @@ mi-backup:
 mi-restore:
 	# psql.exe -p 5432 -U magicinfo -d magicinfo -f backup.sql
 	psql.exe -p $(PORT) -U $(USER) -d $(DBNAME) -f $(PATH)
+
+M ?= ""
+.PHONY: change-url
+change-url:
+	go run ./cmd/main.go -a $(M)
+
+P ?= "macs.txt"
+.PHONY: change-url
+change-url:
+	go run ./cmd/main.go -p $(P)
