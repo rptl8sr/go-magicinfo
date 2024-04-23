@@ -71,7 +71,7 @@ mi-backup:
 
 .PHONY: mi-restore
 mi-restore:
-	# psql.exe -p 5432 -U magicinfo -d magicinfo -f backup.sql
+	# like this: psql.exe -p 5432 -U magicinfo -d magicinfo -f backup.sql
 	psql.exe -p $(PORT) -U $(USER) -d $(DBNAME) -f $(PATH)
 
 M ?= ""
@@ -79,7 +79,7 @@ M ?= ""
 change-url:
 	go run ./cmd/main.go -a $(M)
 
-P ?= "macs.txt"
+P ?= "mac_address_example.txt"
 .PHONY: change-url
 change-url:
 	go run ./cmd/main.go -p $(P)
