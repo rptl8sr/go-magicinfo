@@ -26,7 +26,7 @@ The usage is very simple:
 
 ## License
 
-Your project's name is licensed under the MIT License - see the LICENSE.md file for more details.
+This project licensed under the MIT License - see the LICENSE.md file for more details.
 
 ## Contact Information
 
