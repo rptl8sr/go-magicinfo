@@ -7,7 +7,7 @@ The usage is very simple:
 
 1. Create a connection data file based on the `dumb.env` example file.
 2. Create a file with the MAC addresses of the displays. The MAC address format is quite flexible, examples can be found in the `mac_address_example.txt` file.
-3. Run the binary file suitable for your system from the `bin` folder, remembering to add the path to the .env file and the list of MAC addresses as arguments.
+3. Run the binary file suitable for your system from the `bin` folder, remember to add the path to the file with list of MAC addresses as argument.
 
     For example, if you have such a file and folder structure:
     ```txt
